@@ -77,8 +77,8 @@ app.post('/process_post', urlencodedParser, (req, res) => {
 
 
 
-
-var server = app.listen(8081, () => {
+// 默认使用ipv6地址，地址最好显示指定
+var server = app.listen(8081,'127.0.0.1', () => {
     var host = server.address().address;
     var port = server.address().port;
 

@@ -25,6 +25,10 @@ app.post('/file_upload', (req, res) => {
                 filename: req.files[0].originalname
             };
             console.log(response);
+            // 声明头，处理中文乱码
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            // 和上面效果相同
+            res.write('<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>');
             res.end(JSON.stringify(response));
         });
     });
